@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планирование съёмки</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <h1>Помощник <span>фотографа</span></h1>
+        <div class="nav-links">
+            <a href="/">Главная</a>
+            <a href="/plan" class="active">Планирование</a>
+            <a href="/tools">Инструменты</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card plan-card">
+            <h2>📸 Создать план съёмки</h2>
+            <div class="plan-row">
+                <label>Имя фотографа</label>
+                <input type="text" id="planPhotographer" placeholder="Ваше имя">
+            </div>
+
+            <div class="plan-row">
+                <label>Дата съёмки</label>
+                <input type="text" id="planDate" placeholder="Выберите дату">
+            </div>
+
+            <div id="weatherBlock" class="plan-row" style="display: none;">
+                <div class="weather-forecast">
+                    <h3 id="weatherTitle">🌤️ Прогноз погоды</h3>
+                    <div id="weatherForecastList">
+                    </div>
+                </div>
+            </div>
+
+            <div class="plan-row">
+                <label>Тип съёмки</label>
+                <select id="planType">
+                    <option value="Студия">📸 Студия</option>
+                    <option value="Натура">🌳 Натура</option>
+                    <option value="Смешанный">🔄 Смешанный</option>
+                </select>
+            </div>
+
+            <div class="plan-row">
+                <label>Место</label>
+                <input type="text" id="planLocation" placeholder="Где проходит съёмка?">
+            </div>
+            <div class="plan-row">
+                <label>Город для прогноза погоды</label>
+                <input type="text" id="planCity" placeholder="Например: Москва, Санкт-Петербург" value="Москва">
+            </div>
+            <div class="plan-row">
+                <label>Заметки</label>
+                <textarea id="planNotes" rows="2" placeholder="Что нужно учесть?"></textarea>
+            </div>
+
+            <button id="savePlanBtn" class="btn-primary" style="width: 100%;">Сохранить план</button>
+        </div>
+
+        <div class="card plans-list-card">
+            <h2>📋 Мои планы съёмок</h2>
+            <div id="plansList">
+                <p class="plans-empty">Нет запланированных съёмок</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='plan.js') }}"></script>
+</body>
+</html>
