@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощник фотографа</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <h1>Помощник <span>фотографа</span></h1>
+        <div class="nav-links">
+            <a href="/">Главная</a>
+            <a href="/plan">Планирование</a>
+            <a href="/tools">Инструменты</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <h2>Планируйте съёмки профессионально</h2>
+            <p>Помощник фотографа — это ваш личный ассистент для подготовки к съёмкам без бумажных носителей.</p>
+            <div class="hero-buttons">
+                <a href="/plan" class="btn-primary">Запланировать съёмку</a>
+                <a href="/tools" class="btn-secondary">Все инструменты</a>
+            </div>
+        </div>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-icon">🌤️</span>
+                <h3>Погода и свет</h3>
+                <p>Температура, восход/закат и золотой час для идеальных кадров</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔬</span>
+                <h3>ГРИП и выдержка</h3>
+                <p>Расчёты глубины резкости и настроек для идеальной экспозиции</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎒</span>
+                <h3>Чек-лист снаряжения</h3>
+                <p>Ничего не забудьте на съёмке</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
